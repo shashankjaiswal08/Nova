@@ -1,0 +1,40 @@
+import Navbar from "../components/landing/Navbar";
+import Hero from "../components/landing/Hero";
+import SocialProof from "../components/landing/SocialProof";
+import ProblemSection from "../components/landing/ProblemSection";
+import SolutionSection from "../components/landing/SolutionSection";
+import FeatureShowcase from "../components/landing/FeatureShowcase";
+import ProductDemo from "../components/landing/ProductDemo";
+import HowItWorks from "../components/landing/HowItWorks";
+import Benefits from "../components/landing/Benefits";
+import Testimonial from "../components/landing/Testimonial";
+import Pricing from "../components/landing/Pricing";
+import FAQ from "../components/landing/FAQ";
+import FinalCTA from "../components/landing/FinalCTA";
+import Footer from "../components/landing/Footer";
+
+export default function Page() {
+  return (
+    <div className="relative isolate overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-full -translate-x-1/2 bg-[radial-gradient(circle_at_50%_8%,rgba(33,104,255,0.18)_0%,rgba(36,91,214,0.08)_13%,transparent_29%),radial-gradient(circle_at_12%_43%,rgba(32,95,255,0.12)_0%,transparent_22%),radial-gradient(circle_at_84%_72%,rgba(45,111,255,0.1)_0%,transparent_24%)] blur-[72px]" />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <SocialProof />
+          <ProblemSection />
+          <SolutionSection />
+          <FeatureShowcase />
+          <ProductDemo />
+          <HowItWorks />
+          <Benefits />
+          <Testimonial />
+          <Pricing />
+          <FAQ />
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+    </div>
+  );
+}
