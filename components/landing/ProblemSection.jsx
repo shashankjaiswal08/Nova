@@ -1,13 +1,14 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { problems } from "../../data/landing";
 import { reveal } from "./animations";
+import MotionProvider from "./MotionProvider";
 export default function ProblemSection() {
   return (
-    <section id="solutions" className="problems section">
+    <MotionProvider><section id="solutions" className="problems section">
       <div className="shell">
-        <motion.div
+        <m.div
           className="section-intro"
           initial="hidden"
           whileInView="show"
@@ -24,10 +25,10 @@ export default function ProblemSection() {
             Projects become complicated when work is scattered across messages,
             documents, spreadsheets and disconnected apps.
           </p>
-        </motion.div>
+        </m.div>
         <div className="problem-list">
           {problems.map((item, index) => (
-            <motion.article
+            <m.article
               key={item[0]}
               initial="hidden"
               whileInView="show"
@@ -44,10 +45,10 @@ export default function ProblemSection() {
               <h3>{item[1]}</h3>
               <p>{item[2]}</p>
               <ArrowUpRight />
-            </motion.article>
+            </m.article>
           ))}
         </div>
       </div>
-    </section>
+    </section></MotionProvider>
   );
 }

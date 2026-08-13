@@ -1,21 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, m } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navigation } from "../../data/landing";
 import { ease } from "./animations";
 import { Button, Logo } from "./shared";
+import MotionProvider from "./MotionProvider";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const scrollState = useRef(false);
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 24);
+    const update = () => {
+      const nextScrolled = window.scrollY > 24;
+      if (nextScrolled !== scrollState.current) {
+        scrollState.current = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+    };
     update();
-    addEventListener("scroll", update);
+    addEventListener("scroll", update, { passive: true });
     return () => removeEventListener("scroll", update);
   }, []);
   return (
-    <header className={`nav-wrap ${scrolled ? "nav-scrolled" : ""}`}>
+    <MotionProvider><header className={`nav-wrap ${scrolled ? "nav-scrolled" : ""}`}>
       <nav className="nav shell" aria-label="Main navigation">
         <Logo />
         <div className="nav-links">
@@ -42,7 +50,7 @@ export default function Navbar() {
       </nav>
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             className="mobile-nav"
             initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
             animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
@@ -63,9 +71,9 @@ export default function Navbar() {
               ))}
             </div>
             <Button href="#pricing">Start Free</Button>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </header>
+    </header></MotionProvider>
   );
 }

@@ -16,7 +16,7 @@ import Footer from "../components/landing/Footer";
 export default function Page() {
   return (
     <div className="relative isolate overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-full -translate-x-1/2 bg-[radial-gradient(circle_at_50%_8%,rgba(33,104,255,0.18)_0%,rgba(36,91,214,0.08)_13%,transparent_29%),radial-gradient(circle_at_12%_43%,rgba(32,95,255,0.12)_0%,transparent_22%),radial-gradient(circle_at_84%_72%,rgba(45,111,255,0.1)_0%,transparent_24%)] blur-[72px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 z-0 h-[2200px] w-full -translate-x-1/2 bg-[radial-gradient(circle_at_50%_14%,rgba(33,104,255,0.1)_0%,rgba(36,91,214,0.04)_15%,transparent_32%),radial-gradient(circle_at_50%_84%,rgba(32,95,255,0.07)_0%,transparent_24%)] blur-[72px] md:h-[2650px]" />
       <div className="relative z-10">
         <Navbar />
         <main>

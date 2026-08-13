@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Dashboard from "./ProductDashboard";
+import MotionProvider from "./MotionProvider";
 export default function ProductDemo() {
   const [tab, setTab] = useState("overview");
   return (
-    <section id="demo" className="product-demo section">
+    <MotionProvider><section id="demo" className="product-demo section">
       <div className="shell">
         <div className="demo-heading">
           <span className="num">03 / IN MOTION</span>
@@ -31,7 +32,7 @@ export default function ProductDemo() {
             ))}
           </div>
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={tab}
               initial={{ opacity: 0, x: 12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -39,10 +40,10 @@ export default function ProductDemo() {
               transition={{ duration: 0.25 }}
             >
               <Dashboard mode={tab} />
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
       </div>
-    </section>
+    </section></MotionProvider>
   );
 }

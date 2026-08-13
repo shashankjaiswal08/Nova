@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { pricingPlans } from "../../data/landing";
 import { Button } from "./shared";
@@ -22,7 +23,10 @@ export default function Pricing() {
               aria-pressed={annual}
               onClick={() => setAnnual(!annual)}
             >
-              <i />
+              <motion.i
+                animate={{ x: annual ? 0 : -12 }}
+                transition={{ type: "spring", stiffness: 280, damping: 18 }}
+              />
             </button>
             <span className={annual ? "on" : ""}>
               Yearly <b>save 17%</b>
@@ -31,7 +35,12 @@ export default function Pricing() {
         </div>
         <div className="pricing-cards">
           {pricingPlans.map(([name, price, copy, list], index) => (
-            <article key={name} className={index === 1 ? "featured" : ""}>
+            <motion.article
+              key={name}
+              className={index === 1 ? "featured" : ""}
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+            >
               {index === 1 && <label>MOST POPULAR</label>}
               <h3>{name}</h3>
               <p>{copy}</p>
@@ -50,7 +59,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </motion.article>
           ))}
         </div>
         <p className="cancel">Cancel anytime.</p>

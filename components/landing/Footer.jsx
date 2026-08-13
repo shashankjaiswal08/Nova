@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <a href="#">X</a>
           <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
+          <a href="https://github.com/shashankjaiswal08/nova">GitHub</a>
         </div>
       </div>
     </footer>

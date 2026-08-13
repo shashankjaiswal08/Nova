@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { faqs } from "../../data/landing";
 import { ease } from "./animations";
+import MotionProvider from "./MotionProvider";
 export default function FAQ() {
   const [open, setOpen] = useState(0);
   return (
-    <section id="resources" className="faq section">
+    <MotionProvider><section id="resources" className="faq section">
       <div className="shell">
         <div>
           <span className="num">07 / FAQ</span>
@@ -28,20 +29,20 @@ export default function FAQ() {
               </button>
               <AnimatePresence initial={false}>
                 {open === index && (
-                  <motion.div
+                  <m.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.28, ease }}
                   >
                     <p>{answer}</p>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </article>
           ))}
         </div>
       </div>
-    </section>
+    </section></MotionProvider>
   );
 }
