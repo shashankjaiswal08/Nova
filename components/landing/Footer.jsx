@@ -26,8 +26,7 @@ export default function Footer() {
       <div className="shell footer-bottom">
         <span>© 2025 NOVA. A fictional portfolio project.</span>
         <div>
-          <a href="#">X</a>
-          <a href="#">LinkedIn</a>
+          <p>Email: <a href="mailto:er.shashankjaiswal08@gmail.com">er.shashankjaiswal08@gmail.com</a></p>
           <a href="https://github.com/shashankjaiswal08/nova">GitHub</a>
         </div>
       </div>

@@ -84,9 +84,18 @@ button {
     transform: translateY(-8px);
   }
 }
-.float-panel {
-  animation: floatPanel 7s ease-in-out infinite;
+
+.hero-dashboard-outer,
+.floating-grid,
+.hero-glow {
+  animation: none;
 }
+
+.hero-dashboard {
+  perspective: 1200px;
+  filter: drop-shadow(0 35px 50px rgba(0, 0, 0, 0.55));
+}
+
 .shell {
   width: min(1180px, calc(100% - 64px));
   margin: auto;
