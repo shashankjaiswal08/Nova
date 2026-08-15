@@ -6,6 +6,7 @@ import { navigation } from "../../data/landing";
 import { ease } from "./animations";
 import { Button, Logo } from "./shared";
 import MotionProvider from "./MotionProvider";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
