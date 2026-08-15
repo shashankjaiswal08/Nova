@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="hero-grid floating-grid" />
         <div
           aria-hidden="true"
-          className="hero-glow pointer-events-none absolute left-1/2 top-[170px] z-0 h-[460px] w-[min(62vw,900px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(44,116,255,0.28)_0%,rgba(63,109,255,0.14)_35%,transparent_72%)] blur-[42px] max-[800px]:top-[120px] max-[800px]:h-[370px] max-[800px]:w-[130vw] max-[800px]:opacity-80"
+          className="hero-glow pointer-events-none absolute left-1/2 top-42.5 z-0 h-115 w-[min(62vw,900px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(44,116,255,0.28)_0%,rgba(63,109,255,0.14)_35%,transparent_72%)] blur-[42px] max-[800px]:top-30 max-[800px]:h-92.5 max-[800px]:w-[130vw] max-[800px]:opacity-80"
         />
         <div className="shell hero-content relative z-10">
           <m.div

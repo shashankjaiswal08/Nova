@@ -1,4 +1,5 @@
 import "./globals.css";
+import Cursor from "../components/landing/Cursor";
 
 export const metadata = {
   title: "NOVA — One workspace for modern teams",
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Cursor />
+        {children}
+      </body>
     </html>
   );
 }
