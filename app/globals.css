@@ -225,7 +225,7 @@ button {
 }
 .mobile-nav {
   position: fixed;
-  height: full;
+  height: 80vh
   inset: 0;
   z-index: 25;
   padding: 16px 32px;
