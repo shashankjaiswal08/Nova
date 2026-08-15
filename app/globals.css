@@ -222,6 +222,8 @@ button {
   background: none;
   border: 0;
   padding: 6px;
+  z-index: 30;
+  color: white;
 }
 .mobile-nav {
   position: fixed;
