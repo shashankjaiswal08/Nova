@@ -53,13 +53,7 @@ npm run build
 npm run start
 ```
 
-Note: If your package scripts differ, check `package.json` for exact commands.
-
-## Deployment
-
-This project can be deployed to any platform supporting Next.js (Vercel, Netlify, Cloudflare Pages with adapters, etc.). For Vercel, simply connect the repository and select the root as the project directory — Vercel will detect Next.js automatically.
-
-## Contributing
+### Note: If your package scripts differ, check `package.json` for exact commands.
 
 Contributions are welcome. Keep changes focused and open a PR with a clear description of intent.
 
