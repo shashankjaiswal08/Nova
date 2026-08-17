@@ -242,7 +242,7 @@ button {
   color: white;
 }
 .mobile-nav {
-  position: sticky;
+  position: fixed;
   height: 100%;
   width: 75%;
   inset: 0;
