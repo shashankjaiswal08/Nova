@@ -243,7 +243,8 @@ button {
 }
 .mobile-nav {
   position: fixed;
-  height: 85vh;
+  right: 0;
+  height: 100%;
   width: 75%;
   inset: 0;
   z-index: 25;
