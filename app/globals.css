@@ -243,11 +243,10 @@ button {
 }
 .mobile-nav {
   position: fixed;
-  margin-right: 0;
   height: 100%;
   width: 75%;
   inset: 0;
-  z-index: 25;
+  z-index: 250;
   padding: 16px 32px;
   background: #303030;
   display: flex;
