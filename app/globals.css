@@ -243,7 +243,7 @@ button {
 }
 .mobile-nav {
   position: fixed;
-  right: 0;
+  margin-right: 0;
   height: 100%;
   width: 75%;
   inset: 0;
