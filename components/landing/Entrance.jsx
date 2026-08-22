@@ -57,7 +57,7 @@ export default function Entrance() {
               scale: 1,
             }}
             transition={{
-              duration: 0.7,
+              duration: 1.5,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="select-none text-5xl font-semibold tracking-[-0.06em] text-white sm:text-6xl md:text-7xl"
