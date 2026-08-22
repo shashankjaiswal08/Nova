@@ -33,12 +33,12 @@ export default function Entrance() {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ y: 0 }}
+        initial={{ y: 0, backgroundColor:'#000'}}
         animate={{ y: "-100%" }}
         exit={{ y: "-100%" }}
         transition={{
           duration: 0.8,
-          delay: 1.35,
+          delay: 0.8,
           ease: [0.76, 0, 0.24, 1],
         }}
         className="pointer-events-none fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#080808]"
@@ -49,7 +49,7 @@ export default function Entrance() {
             initial={{
               opacity: 0,
               y: 20,
-              scale: 0.92,
+              scale: 0,
             }}
             animate={{
               opacity: 1,
@@ -57,7 +57,8 @@ export default function Entrance() {
               scale: 1,
             }}
             transition={{
-              duration: 1.5,
+              duration: 2,
+              delay: 0.6,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="select-none text-5xl font-semibold tracking-[-0.06em] text-white sm:text-6xl md:text-7xl"
