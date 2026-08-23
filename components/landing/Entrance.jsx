@@ -35,7 +35,7 @@ export default function Entrance() {
           transition={{
             duration: prefersReducedMotion ? 0.25 : 1.2,
             delay: prefersReducedMotion ? 0 : 3.2,
-            ease: [0.65, 0, 0.35, 1],
+            ease: "easeInOut",
           }}
           className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
           aria-hidden="true"
@@ -63,7 +63,7 @@ export default function Entrance() {
           )}
 
           {/* =========================================
-              VERY SUBTLE GRID
+              SUBTLE GRID
           ========================================= */}
 
           {!prefersReducedMotion && (
@@ -108,19 +108,19 @@ export default function Entrance() {
               animate={{ scaleX: 1 }}
               transition={{
                 duration: 1.6,
-                ease: [0.65, 0, 0.35, 1],
+                ease: "easeInOut",
               }}
               className="absolute left-0 top-0 h-px w-full origin-left bg-white/[0.12]"
             />
           )}
 
           {/* =========================================
-              CENTER CONTENT
+              CENTER
           ========================================= */}
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center">
-              {/* Small label */}
+              {/* Label */}
 
               <motion.p
                 initial={{
@@ -159,7 +159,7 @@ export default function Entrance() {
                 transition={{
                   duration: prefersReducedMotion ? 0.25 : 1.5,
                   delay: prefersReducedMotion ? 0 : 0.55,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: "easeOut",
                 }}
                 className="select-none text-[18vw] font-semibold leading-none tracking-[-0.09em] text-white sm:text-[15vw] md:text-[12vw] lg:text-[10vw]"
               >
@@ -182,7 +182,7 @@ export default function Entrance() {
                 transition={{
                   duration: prefersReducedMotion ? 0.25 : 1.2,
                   delay: prefersReducedMotion ? 0 : 1.45,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: "easeOut",
                 }}
                 className="mt-8 h-px w-[180px] origin-center bg-violet-400 shadow-[0_0_18px_rgba(167,139,250,0.65)] sm:w-[240px]"
               />
@@ -224,6 +224,7 @@ export default function Entrance() {
                 transition={{
                   delay: 1.2,
                   duration: 1,
+                  ease: "easeOut",
                 }}
                 className="text-[8px] uppercase tracking-[0.3em] text-white"
               >
