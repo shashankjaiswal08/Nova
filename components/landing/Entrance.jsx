@@ -13,12 +13,9 @@ export default function Entrance() {
     setMounted(true);
     setVisible(true);
 
-    const timer = setTimeout(
-      () => {
-        setVisible(false);
-      },
-      prefersReducedMotion ? 700 : 5200
-    );
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, prefersReducedMotion ? 700 : 5600);
 
     return () => clearTimeout(timer);
   }, [prefersReducedMotion]);
@@ -29,21 +26,52 @@ export default function Entrance() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{
-            y: 0,
-          }}
+          initial={{ y: 0 }}
           animate={{
             y: prefersReducedMotion ? 0 : "-100%",
           }}
           transition={{
-            duration: prefersReducedMotion ? 0.25 : 1.1,
-            delay: prefersReducedMotion ? 0 : 4.1,
+            duration: prefersReducedMotion ? 0.25 : 1.4,
+            delay: prefersReducedMotion ? 0 : 4.2,
           }}
           className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
           aria-hidden="true"
         >
           {/* =====================================================
-              PURPLE CIRCULAR GRADIENT
+              MAIN PURPLE GRADIENT
+          ===================================================== */}
+
+          {!prefersReducedMotion && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.9,
+              }}
+              animate={{
+                opacity: [0.7, 1, 0.8],
+                scale: [0.9, 1.05, 0.96],
+              }}
+              transition={{
+                duration: 4.5,
+                delay: 0.1,
+              }}
+              className="
+                absolute
+                left-1/2
+                top-1/2
+                h-[680px]
+                w-[680px]
+                -translate-x-1/2
+                -translate-y-1/2
+                rounded-full
+                bg-[radial-gradient(circle,rgba(139,92,246,0.18)_0%,rgba(124,58,237,0.09)_32%,rgba(91,33,182,0.04)_50%,transparent_72%)]
+                blur-3xl
+              "
+            />
+          )}
+
+          {/* =====================================================
+              SECONDARY PURPLE GLOW
           ===================================================== */}
 
           {!prefersReducedMotion && (
@@ -53,39 +81,36 @@ export default function Entrance() {
                 scale: 0.8,
               }}
               animate={{
-                opacity: 1,
-                scale: 1,
+                opacity: [0, 0.55, 0.25],
+                scale: [0.8, 1, 0.9],
               }}
               transition={{
-                duration: 2.5,
+                duration: 4,
+                delay: 0.7,
               }}
               className="
                 absolute
-                left-1/2
-                top-1/2
-                h-[650px]
-                w-[650px]
+                left-[58%]
+                top-[62%]
+                h-[420px]
+                w-[420px]
                 -translate-x-1/2
                 -translate-y-1/2
                 rounded-full
-                bg-[radial-gradient(circle,rgba(139,92,246,0.18)_0%,rgba(124,58,237,0.08)_35%,transparent_70%)]
-                blur-2xl
+                bg-[radial-gradient(circle,rgba(167,139,250,0.10)_0%,transparent_68%)]
+                blur-3xl
               "
             />
           )}
 
           {/* =====================================================
-              SUBTLE GRID
+              VERY SUBTLE GRID
           ===================================================== */}
 
           {!prefersReducedMotion && (
             <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{
                 duration: 2,
                 delay: 0.3,
@@ -115,41 +140,41 @@ export default function Entrance() {
 
           {/* =====================================================
               LEFT ACCENT LINE
-              Similar visual detail to the reference
           ===================================================== */}
 
           <motion.div
             initial={{
               scaleY: 0,
+              opacity: 0,
             }}
             animate={{
               scaleY: 1,
+              opacity: 1,
             }}
             transition={{
-              duration: prefersReducedMotion ? 0.2 : 1.5,
-              delay: prefersReducedMotion ? 0 : 0.5,
+              duration: prefersReducedMotion ? 0.2 : 1.4,
+              delay: prefersReducedMotion ? 0 : 0.45,
             }}
             className="
               absolute
               left-0
               top-1/2
-              h-20
-              w-[2px]
+              h-24
+              w-px
               origin-center
               -translate-y-1/2
               bg-violet-400
-              shadow-[0_0_15px_rgba(167,139,250,0.7)]
-              sm:h-28
+              shadow-[0_0_18px_rgba(167,139,250,0.65)]
+              sm:h-32
             "
           />
 
           {/* =====================================================
-              CENTER
+              CENTER CONTENT
           ===================================================== */}
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center">
-
               {/* =================================================
                   SMALL LABEL
               ================================================= */}
@@ -168,7 +193,7 @@ export default function Entrance() {
                   delay: prefersReducedMotion ? 0 : 0.7,
                 }}
                 className="
-                  mb-6
+                  mb-7
                   text-[8px]
                   uppercase
                   tracking-[0.45em]
@@ -180,24 +205,23 @@ export default function Entrance() {
               </motion.p>
 
               {/* =================================================
-                  NOVA LOGO
-
-                  Blur -> sharp
-                  Slight scale -> normal
+                  NOVA
               ================================================= */}
 
               <motion.h1
                 initial={{
                   opacity: 0,
-                  scale: prefersReducedMotion ? 1 : 0.96,
+                  scale: prefersReducedMotion ? 1 : 0.94,
                   filter: prefersReducedMotion
                     ? "blur(0px)"
-                    : "blur(12px)",
+                    : "blur(16px)",
+                  letterSpacing: "0.04em",
                 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
                   filter: "blur(0px)",
+                  letterSpacing: "-0.09em",
                 }}
                 transition={{
                   duration: prefersReducedMotion ? 0.2 : 1.8,
@@ -208,7 +232,6 @@ export default function Entrance() {
                   text-[18vw]
                   font-semibold
                   leading-none
-                  tracking-[-0.09em]
                   text-white
                   sm:text-[15vw]
                   md:text-[12vw]
@@ -219,25 +242,27 @@ export default function Entrance() {
               </motion.h1>
 
               {/* =================================================
-                  PURPLE LINE
+                  ACCENT LINE
               ================================================= */}
 
               <motion.div
                 initial={{
-                  width: 0,
+                  scaleX: 0,
                   opacity: 0,
                 }}
                 animate={{
-                  width: 220,
+                  scaleX: 1,
                   opacity: 1,
                 }}
                 transition={{
                   duration: prefersReducedMotion ? 0.2 : 1.1,
-                  delay: prefersReducedMotion ? 0 : 1.8,
+                  delay: prefersReducedMotion ? 0 : 1.9,
                 }}
                 className="
-                  mt-7
+                  mt-8
                   h-px
+                  w-[220px]
+                  origin-center
                   bg-violet-400
                   shadow-[0_0_16px_rgba(139,92,246,0.6)]
                 "
@@ -250,13 +275,15 @@ export default function Entrance() {
               <motion.p
                 initial={{
                   opacity: 0,
+                  y: 6,
                 }}
                 animate={{
                   opacity: 0.4,
+                  y: 0,
                 }}
                 transition={{
                   duration: prefersReducedMotion ? 0.2 : 1,
-                  delay: prefersReducedMotion ? 0 : 2.1,
+                  delay: prefersReducedMotion ? 0 : 2.15,
                 }}
                 className="
                   mt-5
@@ -279,15 +306,11 @@ export default function Entrance() {
           {!prefersReducedMotion && (
             <>
               <motion.div
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 0.3,
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.3 }}
                 transition={{
                   duration: 1,
-                  delay: 1.5,
+                  delay: 1.4,
                 }}
                 className="
                   absolute
@@ -303,16 +326,50 @@ export default function Entrance() {
                 Welcome
               </motion.div>
 
+              {/* Progress line */}
+
+              <div
+                className="
+                  absolute
+                  bottom-8
+                  left-1/2
+                  flex
+                  -translate-x-1/2
+                  items-center
+                  gap-3
+                "
+              >
+                <div className="h-px w-20 overflow-hidden bg-white/[0.08] sm:w-28">
+                  <motion.div
+                    initial={{
+                      scaleX: 0,
+                    }}
+                    animate={{
+                      scaleX: 1,
+                    }}
+                    transition={{
+                      duration: 3.8,
+                      delay: 0.4,
+                    }}
+                    className="
+                      h-full
+                      origin-left
+                      bg-violet-400
+                    "
+                  />
+                </div>
+
+                <span className="text-[8px] tracking-[0.2em] text-white/30">
+                  01
+                </span>
+              </div>
+
               <motion.div
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 0.3,
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.3 }}
                 transition={{
                   duration: 1,
-                  delay: 1.5,
+                  delay: 1.4,
                 }}
                 className="
                   absolute
