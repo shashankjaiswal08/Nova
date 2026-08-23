@@ -6,7 +6,7 @@ export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="fixed left-0 right-0 top-[72px] z-[9998] h-[2px] bg-white/[0.04]">
+    <div className="fixed left-0 right-0 top-[76px] z-[9998] h-[2px] bg-white/[0.04]">
       <motion.div
         className="relative h-full origin-left bg-violet-500"
         style={{
