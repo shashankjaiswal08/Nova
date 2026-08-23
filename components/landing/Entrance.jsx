@@ -171,7 +171,7 @@ export default function Entrance() {
                   filter: "blur(0px)",
                 }}
                 transition={{
-                  duration: prefersReducedMotion ? 0.2 : 1.8,
+                  duration: prefersReducedMotion ? 0.2 : 0.8,
                   delay: prefersReducedMotion ? 0 : 0.8,
                 }}
                 className="
