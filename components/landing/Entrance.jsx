@@ -1,11 +1,12 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-
 
 export default function Entrance() {
   const [visible, setVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
+
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -31,7 +32,9 @@ export default function Entrance() {
           initial={{
             y: 0,
           }}
-          animate={{ opacity: 0 }}
+          animate={{
+            y: prefersReducedMotion ? 0 : "-100%",
+          }}
           transition={{
             duration: prefersReducedMotion ? 0.25 : 1.1,
             delay: prefersReducedMotion ? 0 : 4.1,
@@ -39,6 +42,9 @@ export default function Entrance() {
           className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
           aria-hidden="true"
         >
+          {/* =====================================================
+              PURPLE CIRCULAR GRADIENT
+          ===================================================== */}
 
           {!prefersReducedMotion && (
             <motion.div
@@ -67,6 +73,10 @@ export default function Entrance() {
               "
             />
           )}
+
+          {/* =====================================================
+              SUBTLE GRID
+          ===================================================== */}
 
           {!prefersReducedMotion && (
             <motion.div
@@ -103,6 +113,10 @@ export default function Entrance() {
             </motion.div>
           )}
 
+          {/* =====================================================
+              LEFT ACCENT LINE
+              Similar visual detail to the reference
+          ===================================================== */}
 
           <motion.div
             initial={{
@@ -129,8 +143,16 @@ export default function Entrance() {
             "
           />
 
+          {/* =====================================================
+              CENTER
+          ===================================================== */}
+
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center">
+
+              {/* =================================================
+                  SMALL LABEL
+              ================================================= */}
 
               <motion.p
                 initial={{
@@ -157,6 +179,13 @@ export default function Entrance() {
                 Independent Digital Studio
               </motion.p>
 
+              {/* =================================================
+                  NOVA LOGO
+
+                  Blur -> sharp
+                  Slight scale -> normal
+              ================================================= */}
+
               <motion.h1
                 initial={{
                   opacity: 0,
@@ -171,7 +200,7 @@ export default function Entrance() {
                   filter: "blur(0px)",
                 }}
                 transition={{
-                  duration: prefersReducedMotion ? 0.2 : 0.8,
+                  duration: prefersReducedMotion ? 0.2 : 1.8,
                   delay: prefersReducedMotion ? 0 : 0.8,
                 }}
                 className="
@@ -188,6 +217,10 @@ export default function Entrance() {
               >
                 NOVA
               </motion.h1>
+
+              {/* =================================================
+                  PURPLE LINE
+              ================================================= */}
 
               <motion.div
                 initial={{
@@ -210,6 +243,9 @@ export default function Entrance() {
                 "
               />
 
+              {/* =================================================
+                  SUBTITLE
+              ================================================= */}
 
               <motion.p
                 initial={{
@@ -235,6 +271,10 @@ export default function Entrance() {
               </motion.p>
             </div>
           </div>
+
+          {/* =====================================================
+              BOTTOM INFORMATION
+          ===================================================== */}
 
           {!prefersReducedMotion && (
             <>
@@ -289,6 +329,9 @@ export default function Entrance() {
             </>
           )}
 
+          {/* =====================================================
+              GRAIN
+          ===================================================== */}
 
           {!prefersReducedMotion && (
             <div
