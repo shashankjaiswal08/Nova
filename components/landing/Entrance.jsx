@@ -31,9 +31,7 @@ export default function Entrance() {
           initial={{
             y: 0,
           }}
-          animate={{
-            y: prefersReducedMotion ? 0 : "-100%",
-          }}
+          animate={{ opacity: 0 }}
           transition={{
             duration: prefersReducedMotion ? 0.25 : 1.1,
             delay: prefersReducedMotion ? 0 : 4.1,
