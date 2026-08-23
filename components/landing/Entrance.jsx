@@ -40,11 +40,20 @@ export default function Entrance() {
           className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
           aria-hidden="true"
         >
-          {/* Background glow */}
+          {/* =========================================
+              BACKGROUND GLOW
+          ========================================= */}
+
           {!prefersReducedMotion && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.75 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{
+                opacity: 0,
+                scale: 0.75,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
               transition={{
                 duration: 2.2,
                 ease: "easeOut",
@@ -53,28 +62,46 @@ export default function Entrance() {
             />
           )}
 
-          {/* Grid */}
+          {/* =========================================
+              VERY SUBTLE GRID
+          ========================================= */}
+
           {!prefersReducedMotion && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              className="absolute inset-0 opacity-[0.035]"
+              transition={{
+                duration: 2,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+              className="absolute inset-0 opacity-[0.008]"
             >
               <div
                 className="h-full w-full"
                 style={{
                   backgroundImage: `
-                    linear-gradient(to right, white 1px, transparent 1px),
-                    linear-gradient(to bottom, white 1px, transparent 1px)
+                    linear-gradient(
+                      to right,
+                      rgba(255,255,255,0.2) 1px,
+                      transparent 1px
+                    ),
+                    linear-gradient(
+                      to bottom,
+                      rgba(255,255,255,0.2) 1px,
+                      transparent 1px
+                    )
                   `,
-                  backgroundSize: "80px 80px",
+                  backgroundSize: "120px 120px",
                 }}
               />
             </motion.div>
           )}
 
-          {/* Top line */}
+          {/* =========================================
+              TOP LINE
+          ========================================= */}
+
           {!prefersReducedMotion && (
             <motion.div
               initial={{ scaleX: 0 }}
@@ -83,14 +110,18 @@ export default function Entrance() {
                 duration: 1.6,
                 ease: [0.65, 0, 0.35, 1],
               }}
-              className="absolute left-0 top-0 h-px w-full origin-left bg-white/15"
+              className="absolute left-0 top-0 h-px w-full origin-left bg-white/[0.12]"
             />
           )}
 
-          {/* Center */}
+          {/* =========================================
+              CENTER CONTENT
+          ========================================= */}
+
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center">
-              {/* Label */}
+              {/* Small label */}
+
               <motion.p
                 initial={{
                   opacity: 0,
@@ -110,7 +141,10 @@ export default function Entrance() {
                 Independent Digital Studio
               </motion.p>
 
-              {/* NOVA */}
+              {/* =========================================
+                  NOVA
+              ========================================= */}
+
               <motion.h1
                 initial={{
                   opacity: 0,
@@ -132,7 +166,10 @@ export default function Entrance() {
                 NOVA
               </motion.h1>
 
-              {/* Accent */}
+              {/* =========================================
+                  ACCENT LINE
+              ========================================= */}
+
               <motion.div
                 initial={{
                   scaleX: 0,
@@ -150,7 +187,10 @@ export default function Entrance() {
                 className="mt-8 h-px w-[180px] origin-center bg-violet-400 shadow-[0_0_18px_rgba(167,139,250,0.65)] sm:w-[240px]"
               />
 
-              {/* Subtitle */}
+              {/* =========================================
+                  SUBTITLE
+              ========================================= */}
+
               <motion.p
                 initial={{
                   opacity: 0,
@@ -172,15 +212,26 @@ export default function Entrance() {
             </div>
           </div>
 
-          {/* Bottom progress */}
+          {/* =========================================
+              BOTTOM PROGRESS
+          ========================================= */}
+
           {!prefersReducedMotion && (
             <div className="absolute bottom-8 left-6 right-6 flex items-center justify-between sm:left-10 sm:right-10">
-              <span className="text-[8px] uppercase tracking-[0.3em] text-white/35">
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.35 }}
+                transition={{
+                  delay: 1.2,
+                  duration: 1,
+                }}
+                className="text-[8px] uppercase tracking-[0.3em] text-white"
+              >
                 Welcome
-              </span>
+              </motion.span>
 
               <div className="flex items-center gap-3">
-                <div className="h-px w-20 overflow-hidden bg-white/10 sm:w-28">
+                <div className="h-px w-20 overflow-hidden bg-white/[0.08] sm:w-28">
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -193,17 +244,20 @@ export default function Entrance() {
                   />
                 </div>
 
-                <span className="text-[8px] tracking-[0.2em] text-white/35">
+                <span className="text-[8px] tracking-[0.2em] text-white/30">
                   2026
                 </span>
               </div>
             </div>
           )}
 
-          {/* Grain */}
+          {/* =========================================
+              GRAIN
+          ========================================= */}
+
           {!prefersReducedMotion && (
             <div
-              className="pointer-events-none absolute inset-0 opacity-[0.025]"
+              className="pointer-events-none absolute inset-0 opacity-[0.02]"
               style={{
                 backgroundImage:
                   "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E\")",
