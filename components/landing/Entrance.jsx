@@ -29,11 +29,9 @@ export default function Entrance() {
       {visible && (
         <motion.div
           initial={{ y: 0 }}
-          animate={{
-            y: prefersReducedMotion ? 0 : "-100%",
-          }}
+          animate={{ scale: 0, opacity: 0 }}
           transition={{
-            duration: prefersReducedMotion ? 0.25 : 1.2,
+            duration: prefersReducedMotion ? 0.25 : 1,
             delay: prefersReducedMotion ? 0 : 3.2,
           }}
           className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
