@@ -11,16 +11,9 @@
   --violet: #8d76ff;
   --blue: #92b7ff;
 }
+
 @media (pointer: fine) {
   body {
-    cursor: none;
-  }
-
-  a,
-  button,
-  input,
-  textarea,
-  select {
     cursor: none;
   }
 }
