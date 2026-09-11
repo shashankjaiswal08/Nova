@@ -10,6 +10,33 @@
   --muted: #96958f;
   --violet: #8d76ff;
   --blue: #92b7ff;
+  --font-manrope: "Manrope", Arial, sans-serif;
+  --font-dm-mono: "DM Mono", monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-manrope);
+  background: #050505;
+  color: white;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-manrope {
+  font-family: var(--font-manrope);
+}
+
+.font-dm-mono {
+  font-family: var(--font-dm-mono);
 }
 
 @media (pointer: fine) {
@@ -31,7 +58,6 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Manrope, Arial, sans-serif;
   overflow-x: hidden;
 }
 html {
