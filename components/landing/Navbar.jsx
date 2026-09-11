@@ -2,48 +2,36 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   {
     name: "Home",
-    href: "/",
+    href: "#home",
   },
   {
-    name: "Work",
-    href: "/work",
+    name: "Projects",
+    href: "#projects",
   },
   {
     name: "Services",
-    href: "/services",
+    href: "#services",
   },
   {
     name: "About",
-    href: "/about",
+    href: "#about",
   },
   {
     name: "Contact",
-    href: "/contact",
+    href: "#contact",
   },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  /*
-   * Close mobile menu whenever the route changes.
-   */
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  /*
-   * Navbar scroll state.
-   */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -60,15 +48,9 @@ export default function Navbar() {
     };
   }, []);
 
-  /*
-   * Prevent body scrolling while mobile menu is open.
-   */
+  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -79,10 +61,14 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
+  const handleNavClick = () => {
+    closeMenu();
+  };
+
   return (
     <>
       {/* =========================
-          DESKTOP / MAIN NAVBAR
+          NAVBAR
       ========================== */}
 
       <header
@@ -120,8 +106,8 @@ export default function Navbar() {
           ========================== */}
 
           <Link
-            href="/"
-            onClick={closeMenu}
+            href="#home"
+            onClick={handleNavClick}
             className="
               group
               relative
@@ -153,7 +139,7 @@ export default function Navbar() {
           </Link>
 
           {/* =========================
-              DESKTOP LINKS
+              DESKTOP NAV LINKS
           ========================== */}
 
           <div
@@ -164,59 +150,43 @@ export default function Navbar() {
               md:flex
             "
           >
-            {navLinks.map((link) => {
-              const isActive =
-                pathname === link.href ||
-                (link.href !== "/" &&
-                  pathname.startsWith(`${link.href}/`));
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={handleNavClick}
+                className="
+                  group
+                  relative
+                  py-2
+                  font-dm-mono
+                  text-[10px]
+                  uppercase
+                  tracking-[0.18em]
+                  text-white/45
+                  transition-colors
+                  duration-300
+                  hover:text-white
+                "
+              >
+                {link.name}
 
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
+                <span
                   className="
-                    group
-                    relative
-                    py-2
-                    font-dm-mono
-                    text-[10px]
-                    uppercase
-                    tracking-[0.18em]
-                    text-white/45
-                    transition-colors
+                    absolute
+                    -bottom-0.5
+                    left-0
+                    h-px
+                    w-0
+                    bg-[#8d76ff]
+                    shadow-[0_0_8px_rgba(141,118,255,0.8)]
+                    transition-all
                     duration-300
-                    hover:text-white
+                    group-hover:w-full
                   "
-                >
-                  <span
-                    className={
-                      isActive ? "text-white" : ""
-                    }
-                  >
-                    {link.name}
-                  </span>
-
-                  {/* Active indicator */}
-                  <span
-                    className={`
-                      absolute
-                      -bottom-0.5
-                      left-0
-                      h-px
-                      bg-[#8d76ff]
-                      shadow-[0_0_8px_rgba(141,118,255,0.8)]
-                      transition-all
-                      duration-300
-                      ${
-                        isActive
-                          ? "w-full"
-                          : "w-0 group-hover:w-full"
-                      }
-                    `}
-                  />
-                </Link>
-              );
-            })}
+                />
+              </Link>
+            ))}
           </div>
 
           {/* =========================
@@ -224,7 +194,8 @@ export default function Navbar() {
           ========================== */}
 
           <Link
-            href="/contact"
+            href="#contact"
+            onClick={handleNavClick}
             className="
               group
               hidden
@@ -341,7 +312,7 @@ export default function Navbar() {
               md:hidden
             "
           >
-            {/* Background glow */}
+            {/* Purple glow */}
             <div
               className="
                 pointer-events-none
@@ -357,7 +328,6 @@ export default function Navbar() {
               "
             />
 
-            {/* Mobile links */}
             <div
               className="
                 relative
@@ -369,6 +339,8 @@ export default function Navbar() {
                 sm:px-12
               "
             >
+              {/* Label */}
+
               <div className="mb-10">
                 <span
                   className="
@@ -383,85 +355,76 @@ export default function Navbar() {
                 </span>
               </div>
 
-              <div className="flex flex-col">
-                {navLinks.map((link, index) => {
-                  const isActive =
-                    pathname === link.href ||
-                    (link.href !== "/" &&
-                      pathname.startsWith(
-                        `${link.href}/`
-                      ));
+              {/* Links */}
 
-                  return (
-                    <motion.div
-                      key={link.href}
-                      initial={{
-                        opacity: 0,
-                        x: -20,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.05,
-                      }}
+              <div className="flex flex-col">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{
+                      opacity: 0,
+                      x: -20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.05,
+                    }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={handleNavClick}
+                      className="
+                        group
+                        flex
+                        items-center
+                        justify-between
+                        border-b
+                        border-white/[0.06]
+                        py-5
+                      "
                     >
-                      <Link
-                        href={link.href}
-                        onClick={closeMenu}
+                      <span
                         className="
-                          group
-                          flex
-                          items-center
-                          justify-between
-                          border-b
-                          border-white/[0.06]
-                          py-5
+                          font-manrope
+                          text-4xl
+                          font-medium
+                          tracking-[-0.05em]
+                          text-white/50
+                          transition-colors
+                          duration-300
+                          group-hover:text-white
                         "
                       >
-                        <span
-                          className={`
-                            font-manrope
-                            text-4xl
-                            font-medium
-                            tracking-[-0.05em]
-                            transition-colors
-                            duration-300
-                            ${
-                              isActive
-                                ? "text-white"
-                                : "text-white/40 group-hover:text-white"
-                            }
-                          `}
-                        >
-                          {link.name}
-                        </span>
+                        {link.name}
+                      </span>
 
-                        <ArrowUpRight
-                          size={20}
-                          strokeWidth={1.3}
-                          className="
-                            text-white/20
-                            transition-all
-                            duration-300
-                            group-hover:-translate-y-1
-                            group-hover:translate-x-1
-                            group-hover:text-[#8d76ff]
-                          "
-                        />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
+                      <ArrowUpRight
+                        size={20}
+                        strokeWidth={1.3}
+                        className="
+                          text-white/20
+                          transition-all
+                          duration-300
+                          group-hover:-translate-y-1
+                          group-hover:translate-x-1
+                          group-hover:text-[#8d76ff]
+                        "
+                      />
+                    </Link>
+                  </motion.div>
+                ))}
               </div>
 
-              {/* Mobile CTA */}
+              {/* CTA */}
+
               <div className="mt-10">
                 <Link
-                  href="/contact"
-                  onClick={closeMenu}
+                  href="#contact"
+                  onClick={handleNavClick}
                   className="
                     inline-flex
                     items-center
@@ -489,7 +452,8 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {/* Bottom information */}
+              {/* Bottom info */}
+
               <div
                 className="
                   absolute
