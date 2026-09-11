@@ -20,17 +20,18 @@ export default function Entrance() {
         <motion.div
           initial={{ y: "0%" }}
           exit={{ y: "-100%" }}
-          transition={{
-            duration: 1.4,
-          }}
-          className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden bg-[#050505]"
+          transition={{ duration: 1.4 }}
+          className="
+            pointer-events-none
+            fixed
+            inset-0
+            z-[99999]
+            overflow-hidden
+            bg-[#050505]
+          "
           aria-hidden="true"
         >
-          {/* =====================================================
-              MAIN PURPLE GRADIENT
-              Static for better first-load performance
-          ===================================================== */}
-
+          {/* Main Purple Glow */}
           <div
             className="
               absolute
@@ -46,11 +47,7 @@ export default function Entrance() {
             "
           />
 
-          {/* =====================================================
-              SECONDARY PURPLE GLOW
-              Static instead of continuously scaling
-          ===================================================== */}
-
+          {/* Secondary Purple Glow */}
           <div
             className="
               absolute
@@ -66,10 +63,7 @@ export default function Entrance() {
             "
           />
 
-          {/* =====================================================
-              SUBTLE GRID
-          ===================================================== */}
-
+          {/* Subtle Grid */}
           <div className="absolute inset-0 opacity-[0.015]">
             <div
               className="h-full w-full"
@@ -91,10 +85,7 @@ export default function Entrance() {
             />
           </div>
 
-          {/* =====================================================
-              LEFT ACCENT LINE
-          ===================================================== */}
-
+          {/* Left Accent Line */}
           <motion.div
             initial={{
               scaleY: 0,
@@ -122,15 +113,19 @@ export default function Entrance() {
             "
           />
 
-          {/* =====================================================
-              CENTER CONTENT
-          ===================================================== */}
-
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* Center Content */}
+          <div
+            className="
+              absolute
+              inset-0
+              flex
+              items-center
+              justify-center
+            "
+          >
             <div className="flex flex-col items-center">
 
-              {/* Small label */}
-
+              {/* Small Label */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -146,6 +141,7 @@ export default function Entrance() {
                 }}
                 className="
                   mb-7
+                  font-dm-mono
                   text-[8px]
                   uppercase
                   tracking-[0.45em]
@@ -156,13 +152,7 @@ export default function Entrance() {
                 Independent Digital Studio
               </motion.p>
 
-              {/* =================================================
-                  NOVA
-
-                  No blur filter.
-                  Opacity + scale is much cheaper to composite.
-              ================================================= */}
-
+              {/* NOVA */}
               <motion.h1
                 initial={{
                   opacity: 0,
@@ -180,6 +170,7 @@ export default function Entrance() {
                 }}
                 className="
                   select-none
+                  font-manrope
                   text-[18vw]
                   font-semibold
                   leading-none
@@ -192,10 +183,7 @@ export default function Entrance() {
                 NOVA
               </motion.h1>
 
-              {/* =================================================
-                  PURPLE ACCENT LINE
-              ================================================= */}
-
+              {/* Purple Line */}
               <motion.div
                 initial={{
                   scaleX: 0,
@@ -219,10 +207,7 @@ export default function Entrance() {
                 "
               />
 
-              {/* =================================================
-                  SUBTITLE
-              ================================================= */}
-
+              {/* Subtitle */}
               <motion.p
                 initial={{
                   opacity: 0,
@@ -238,6 +223,7 @@ export default function Entrance() {
                 }}
                 className="
                   mt-5
+                  font-dm-mono
                   text-[8px]
                   uppercase
                   tracking-[0.4em]
@@ -250,10 +236,7 @@ export default function Entrance() {
             </div>
           </div>
 
-          {/* =====================================================
-              BOTTOM LEFT
-          ===================================================== */}
-
+          {/* Bottom Left */}
           <motion.div
             initial={{
               opacity: 0,
@@ -269,6 +252,7 @@ export default function Entrance() {
               absolute
               bottom-8
               left-6
+              font-dm-mono
               text-[8px]
               uppercase
               tracking-[0.3em]
@@ -279,10 +263,7 @@ export default function Entrance() {
             Welcome
           </motion.div>
 
-          {/* =====================================================
-              PROGRESS
-          ===================================================== */}
-
+          {/* Progress */}
           <div
             className="
               absolute
@@ -325,6 +306,7 @@ export default function Entrance() {
 
             <span
               className="
+                font-dm-mono
                 text-[8px]
                 tracking-[0.2em]
                 text-white/30
@@ -334,10 +316,7 @@ export default function Entrance() {
             </span>
           </div>
 
-          {/* =====================================================
-              BOTTOM RIGHT
-          ===================================================== */}
-
+          {/* Bottom Right */}
           <motion.div
             initial={{
               opacity: 0,
@@ -353,6 +332,7 @@ export default function Entrance() {
               absolute
               bottom-8
               right-6
+              font-dm-mono
               text-[8px]
               tracking-[0.2em]
               text-white
@@ -362,12 +342,7 @@ export default function Entrance() {
             2026
           </motion.div>
 
-          {/* =====================================================
-              GRAIN TEXTURE
-
-              Static. No animation.
-          ===================================================== */}
-
+          {/* Grain */}
           <div
             className="
               pointer-events-none
@@ -385,4 +360,3 @@ export default function Entrance() {
     </AnimatePresence>
   );
 }
-
