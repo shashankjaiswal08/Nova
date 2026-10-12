@@ -1,51 +1,19 @@
 export default function NotFound() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        background: "#080808",
-        color: "#f2f0ec",
-        fontFamily: "Manrope, Arial, sans-serif",
-      }}
-    >
-      <div style={{ textAlign: "center", padding: "2rem" }}>
-        <p
-          style={{
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "#9b9891",
-            fontSize: 12,
-            marginBottom: 18,
-          }}
-        >
+    <main className="grid min-h-screen place-items-center bg-[var(--bg)] px-8 text-[var(--text)]">
+      <div className="p-8 text-center">
+        <p className="mb-[18px] text-xs uppercase tracking-[0.18em] text-[#9b9891]">
           404
         </p>
-        <h1
-          style={{
-            fontSize: "clamp(2.2rem, 5vw, 4rem)",
-            letterSpacing: "-0.08em",
-            margin: 0,
-          }}
-        >
+        <h1 className="m-0 text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.08em]">
           Page not found
         </h1>
-        <p style={{ color: "#aaa8a2", marginTop: 16, maxWidth: 460 }}>
+        <p className="mx-auto mt-4 max-w-[460px] text-[#aaa8a2]">
           The page you’re looking for doesn’t exist or may have moved.
         </p>
         <a
           href="/"
-          style={{
-            display: "inline-block",
-            marginTop: 22,
-            padding: "12px 18px",
-            borderRadius: 8,
-            background: "#967cff",
-            color: "#0c0b0d",
-            fontWeight: 800,
-            textDecoration: "none",
-          }}
+          className="mt-[22px] inline-block rounded-lg bg-[#967cff] px-[18px] py-3 font-extrabold text-[#0c0b0d]"
         >
           Back home
         </a>

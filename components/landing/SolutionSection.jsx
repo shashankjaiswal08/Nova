@@ -1,9 +1,49 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BarChart3, CircleDot, Layers3, MessageSquare } from "lucide-react";
 import { features } from "../../data/landing";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const icons = { Layers3, CircleDot, MessageSquare, BarChart3 };
+
 export default function SolutionSection() {
+  const sectionRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const cards = sectionRef.current?.querySelectorAll(".feature-card");
+      if (!cards?.length) return;
+
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => gsap.fromTo(
+        cards,
+        { y: 32, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cards[0],
+            start: "top 80%",
+            once: true,
+          },
+        },
+      ));
+      return () => mm.revert();
+    },
+    { scope: sectionRef },
+  );
+
   return (
     <section
+      ref={sectionRef}
       id="product"
       className="border-y border-[#202020] bg-[#0e0e0e] py-[150px] max-[800px]:py-[90px]"
     >
@@ -18,24 +58,30 @@ export default function SolutionSection() {
             <em>Nothing it doesn&apos;t.</em>
           </h2>
         </div>
-        <div className="mt-20 grid grid-cols-4 gap-px border border-[#292929] bg-[#292929] max-[800px]:mt-11 max-[800px]:grid-cols-2">
+
+        <div className="mt-20 grid gap-px border border-[#292929] bg-[#292929] md:grid-cols-2">
           {features.map(([name, copy, icon], index) => {
             const Icon = icons[icon];
             return (
               <article
-                className="relative min-h-[245px] bg-[#0e0e0e] p-[23px] max-[800px]:min-h-[185px] max-[800px]:p-4"
                 key={name}
+                className="feature-card relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden bg-[#0e0e0e] p-[30px] transition-all duration-300 hover:-translate-y-1 hover:bg-[#121212] max-[800px]:min-h-[220px] max-[800px]:p-[20px]"
               >
-                <span className="font-mono text-[10px] text-[#777570]">
-                  0{index + 1}
-                </span>
-                <Icon className="absolute right-[21px] top-[21px] w-[18px] text-[#8f78f6]" />
-                <h3 className="mt-[105px] text-lg tracking-[-0.06em] max-[800px]:mt-[73px] max-[800px]:text-base">
-                  {name}
-                </h3>
-                <p className="text-[11px] leading-[1.6] text-[#8c8a85] max-[800px]:text-[10px]">
-                  {copy}
-                </p>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-[10px] text-[#777570]">
+                    0{index + 1}
+                  </span>
+                  <Icon className="h-[18px] w-[18px] shrink-0 text-[#8f78f6]" />
+                </div>
+
+                <div className="mt-[56px] flex flex-col gap-4 max-[800px]:mt-[42px]">
+                  <h3 className="text-lg tracking-[-0.06em] max-[800px]:text-base">
+                    {name}
+                  </h3>
+                  <p className="max-w-[34ch] text-[11px] leading-[1.6] text-[#8c8a85] max-[800px]:text-[10px]">
+                    {copy}
+                  </p>
+                </div>
               </article>
             );
           })}

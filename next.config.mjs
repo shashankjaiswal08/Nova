@@ -1,6 +1,6 @@
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react"],
   },
 };
 

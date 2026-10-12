@@ -16,7 +16,7 @@ export default function FinalCTA() {
         <p className="text-[13px] text-[#aaa7a1]">
           Bring your projects, people and priorities into one focused workspace.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex justify-center gap-2.5 max-[500px]:flex-col max-[500px]:items-center">
           <Button>Start Free</Button>
           <Button secondary href="#">
             Book a demo <ArrowUpRight size={16} />

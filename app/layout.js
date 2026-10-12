@@ -1,6 +1,6 @@
 import "./globals.css";
+import { DM_Mono, Manrope } from "next/font/google";
 import Cursor from "../components/landing/Cursor";
-import { Manrope, DM_Mono } from "next/font/google";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -26,23 +26,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} ${dmMono.variable}`}
-    >
-      <body
-        className="
-          m-0
-          overflow-x-hidden
-          bg-[#080808]
-          font-manrope
-          text-[#f2f0ec]
-        "
-      >
+    <html lang="en" className={`${manrope.variable} ${dmMono.variable}`}>
+      <body className="m-0 overflow-x-hidden bg-(--bg) font-manrope text-(--text)">
         <Cursor />
         {children}
       </body>
     </html>
   );
 }
-

@@ -78,8 +78,8 @@ export function Overview({ mode }) {
     <>
       <div className="mt-[23px] grid grid-cols-[1.15fr_1fr_1fr] gap-3 max-[800px]:grid-cols-2 max-[500px]:gap-1.5">
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5 max-[500px]:p-2">
-          <small>{mode === "projects" ? "PROJECTS" : "PROGRESS"}</small>
-          <strong>
+          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">{mode === "projects" ? "PROJECTS" : "PROGRESS"}</small>
+          <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">
             {mode === "projects" ? "12" : "72"}
             <em>{mode === "projects" ? " active" : "%"}</em>
           </strong>
@@ -88,14 +88,14 @@ export function Overview({ mode }) {
           </div>
         </div>
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
-          <small>FOCUS TIME</small>
-          <strong>
+          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">FOCUS TIME</small>
+          <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">
             4.5<em> hours</em>
           </strong>
           <p className="text-[8px] text-[#4e9772]">↑ 12% from last week</p>
         </div>
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5 max-[800px]:hidden">
-          <small>TEAM ACTIVITY</small>
+          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">TEAM ACTIVITY</small>
           <AvatarStack />
           <p>8 people active</p>
         </div>
@@ -132,29 +132,29 @@ export function Overview({ mode }) {
             </div>
           ))}
         </section>
-        <section className="timeline">
-          <header>
-            <h4>Project timeline</h4>
-            <span>Week 43</span>
+        <section className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
+          <header className="flex items-center justify-between">
+            <h4 className="m-0 text-[10px]">Project timeline</h4>
+            <span className="font-dm-mono text-[7px] text-[#777570]">Week 43</span>
           </header>
-          <div className="timeline-days">
+          <div className="my-[17px] flex justify-between text-[6px] text-[#92908a]">
             <span>Mon</span>
             <span>Tue</span>
             <span>Wed</span>
-            <span className="today">Thu</span>
+            <span className="font-bold text-[#755ee0]">Thu</span>
             <span>Fri</span>
           </div>
-          <div className="timeline-row">
-            <b>Launch</b>
-            <i style={{ width: "64%", marginLeft: "8%" }} />
+          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+            <b className="w-9">Launch</b>
+            <i className="h-2 rounded-[3px] bg-[#b8a7fa]" style={{ width: "64%", marginLeft: "8%" }} />
           </div>
-          <div className="timeline-row">
-            <b>Website</b>
-            <i style={{ width: "44%", marginLeft: "25%" }} />
+          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+            <b className="w-9">Website</b>
+            <i className="h-2 rounded-[3px] bg-[#a5c0e7]" style={{ width: "44%", marginLeft: "25%" }} />
           </div>
-          <div className="timeline-row">
-            <b>Content</b>
-            <i style={{ width: "35%", marginLeft: "14%" }} />
+          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+            <b className="w-9">Content</b>
+            <i className="h-2 rounded-[3px] bg-[#e1b387]" style={{ width: "35%", marginLeft: "14%" }} />
           </div>
         </section>
       </div>
@@ -213,7 +213,7 @@ export function Analytics() {
               42 <em>tasks completed</em>
             </h4>
           </div>
-          <span className="pill">+18.4%</span>
+          <span className="rounded bg-[#dff0e3] p-[5px] text-[7px] text-[#47855d]">+18.4%</span>
         </header>
         <div className="flex h-[105px] items-end justify-between gap-2 border-b border-[#d9d8d5] px-1 py-4">
           {Array.from({ length: 7 }, (_, index) => (
@@ -230,18 +230,18 @@ export function Analytics() {
           ))}
         </div>
       </section>
-      <section className="metrics">
-        <div>
-          <small>On track</small>
-          <strong>84%</strong>
-          <div className="progress">
-            <i />
+      <section className="mt-[11px] grid grid-cols-2 gap-2.5">
+        <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3">
+          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">On track</small>
+          <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">84%</strong>
+          <div className="h-1 overflow-hidden rounded bg-[#dededb]">
+            <i className="block h-full w-[72%] rounded bg-[#8268ed]" />
           </div>
         </div>
-        <div>
-          <small>Focus time</small>
-          <strong>31.5h</strong>
-          <p>↑ 8% this week</p>
+        <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3">
+          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">Focus time</small>
+          <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">31.5h</strong>
+          <p className="m-0 text-[8px] text-[#777570]">↑ 8% this week</p>
         </div>
       </section>
     </div>

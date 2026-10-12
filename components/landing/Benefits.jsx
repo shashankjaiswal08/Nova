@@ -25,11 +25,11 @@ export default function Benefits() {
               Keep your team&apos;s work, communication, and decisions in one
               considered place.
             </p>
-            <div className="orbit">
-              <span />
-              <span />
-              <span />
-              <i />
+            <div aria-hidden="true" className="absolute -bottom-[125px] -right-20 h-[260px] w-[260px] rounded-full border border-[#b6b5b0]">
+              <span className="absolute inset-7 rounded-full border border-[#b6b5b0]" />
+              <span className="absolute inset-14 rounded-full border border-[#b6b5b0]" />
+              <span className="absolute inset-[84px] rounded-full border border-[#b6b5b0]" />
+              <i className="absolute inset-[126px] rounded-full bg-[#735ddb]" />
             </div>
           </article>
           <article className="relative overflow-hidden bg-[#d9d8d4] p-[27px] max-[800px]:p-4">
