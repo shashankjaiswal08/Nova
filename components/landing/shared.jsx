@@ -45,7 +45,7 @@ export function Button({ children, secondary = false, href = "#pricing" }) {
         rounded-[5px]
         border
         px-[18px]
-        text-xs
+        text-sm
         font-extrabold
         tracking-[-0.02em]
         transition-[transform,background,border-color]
@@ -83,7 +83,7 @@ export function AvatarStack() {
             rounded-full
             border-[1.5px]
             border-[#e6e6e4]
-            text-[6px]
+            text-[8px]
             font-extrabold
             text-[#332f2e]
             first:ml-0

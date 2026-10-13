@@ -4,7 +4,7 @@ export default function Benefits() {
     <section className="bg-[#e7e6e2] py-[150px] text-[#20201f] max-[800px]:py-[90px]">
       <div className="mx-auto w-[min(1180px,calc(100%-64px))] max-[800px]:w-[min(100%-36px,600px)]">
         <div className="flex items-end justify-between max-[800px]:block">
-          <span className="font-mono text-[10px] tracking-[0.11em] text-[#706e68]">
+          <span className="font-mono text-xs tracking-[0.11em] text-[#706e68]">
             ✦ 05 / BUILT FOR FOCUS
           </span>
           <h2 className="text-right text-[clamp(2.8rem,5.2vw,5.3rem)] font-semibold leading-[0.99] tracking-[-0.085em] max-[800px]:mt-7 max-[800px]:text-left">
@@ -21,7 +21,7 @@ export default function Benefits() {
               <br />
               switching
             </h3>
-            <p className="max-w-[215px] text-[11px] leading-[1.7] text-[#64625f]">
+            <p className="max-w-[250px] text-sm leading-[1.7] text-[#55534f]">
               Keep your team&apos;s work, communication, and decisions in one
               considered place.
             </p>
@@ -37,7 +37,7 @@ export default function Benefits() {
             <h3 className="mt-[62px] text-[25px] leading-none tracking-[-0.07em] max-[800px]:mt-[45px] max-[800px]:text-xl">
               Clearer ownership
             </h3>
-            <p className="max-w-[215px] text-[11px] leading-[1.7] text-[#64625f]">
+            <p className="max-w-[250px] text-sm leading-[1.7] text-[#55534f]">
               Everyone knows what they own and why it matters.
             </p>
           </article>
@@ -46,7 +46,7 @@ export default function Benefits() {
             <h3 className="mt-[62px] text-[25px] leading-none tracking-[-0.07em] max-[800px]:mt-[45px] max-[800px]:text-xl">
               Better visibility
             </h3>
-            <p className="max-w-[215px] text-[11px] leading-[1.7] text-[#64625f]">
+            <p className="max-w-[250px] text-sm leading-[1.7] text-[#55534f]">
               Progress without asking for another update.
             </p>
           </article>
@@ -56,7 +56,7 @@ export default function Benefits() {
               <br />
               of truth.
             </h3>
-            <p className="max-w-[215px] text-[11px] leading-[1.7] text-[#a2a09b]">
+            <p className="max-w-[250px] text-sm leading-[1.7] text-[#c0beb8]">
               Bring every project back to a single, trusted home.
             </p>
             <Command className="absolute bottom-[27px] right-[26px] text-[#947ef5]" />

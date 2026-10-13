@@ -10,10 +10,10 @@ gsap.registerPlugin(useGSAP);
 
 const navLinks = [
   { name: "Home", href: "#top" },
-  { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Product", href: "#demo" },
+  { name: "Problems", href: "#problems" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Pricing", href: "#pricing" },
 ];
 
 export default function Navbar() {
@@ -107,7 +107,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className="group relative py-2 font-dm-mono text-[10px] uppercase tracking-[0.18em] text-white/45 transition-colors duration-300 hover:text-white"
+                className="group relative py-2 font-dm-mono text-xs uppercase tracking-[0.18em] text-white/45 transition-colors duration-300 hover:text-white"
               >
                 {link.name}
                 <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#8d76ff] shadow-[0_0_8px_rgba(141,118,255,0.8)] transition-all duration-300 group-hover:w-full" />
@@ -118,7 +118,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             onClick={closeMenu}
-            className="group hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 font-dm-mono text-[10px] uppercase tracking-[0.16em] text-white/80 transition-all duration-300 hover:border-[#8d76ff]/40 hover:bg-[#8d76ff]/10 hover:text-white md:flex"
+            className="group hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 font-dm-mono text-xs uppercase tracking-[0.16em] text-white/80 transition-all duration-300 hover:border-[#8d76ff]/40 hover:bg-[#8d76ff]/10 hover:text-white md:flex"
           >
             Let&apos;s talk
             <ArrowUpRight size={13} strokeWidth={1.5} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -147,7 +147,7 @@ export default function Navbar() {
 
         <div className="relative flex h-full flex-col justify-center px-8 sm:px-12">
           <div className="mb-10">
-            <span className="font-dm-mono text-[9px] uppercase tracking-[0.3em] text-white/30">Navigation</span>
+            <span className="font-dm-mono text-[11px] uppercase tracking-[0.3em] text-white/45">Navigation</span>
           </div>
 
           <div className="flex flex-col">
@@ -176,7 +176,7 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={closeMenu}
-              className="inline-flex items-center gap-3 rounded-full bg-[#8d76ff] px-6 py-3 font-dm-mono text-[10px] uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#9b86ff]"
+              className="inline-flex items-center gap-3 rounded-full bg-[#8d76ff] px-6 py-3 font-dm-mono text-xs uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#9b86ff]"
             >
               Start a project
               <ArrowUpRight size={14} strokeWidth={1.5} />
@@ -184,12 +184,11 @@ export default function Navbar() {
           </div>
 
           <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between sm:left-12 sm:right-12">
-            <span className="font-dm-mono text-[8px] uppercase tracking-[0.2em] text-white/25">Independent Digital Studio</span>
-            <span className="font-dm-mono text-[8px] tracking-[0.2em] text-white/25">2026</span>
+            <span className="font-dm-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Independent Digital Studio</span>
+            <span className="font-dm-mono text-[10px] tracking-[0.2em] text-white/40">2026</span>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

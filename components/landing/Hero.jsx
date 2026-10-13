@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="mx-auto max-w-[850px] text-center">
           <div
             data-hero-item
-            className="flex items-center justify-center gap-2 text-[10px] tracking-[0.11em] text-[#bcb9b4]"
+            className="flex items-center justify-center gap-2 text-xs tracking-[0.11em] text-[#d0cec8]"
           >
             <span className="h-[5px] w-[5px] rounded-full bg-[#9b84ff] shadow-[0_0_11px_#9b84ff]" />
             THE MODERN WORKSPACE FOR TEAMS

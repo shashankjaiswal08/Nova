@@ -28,20 +28,20 @@ export default function Dashboard({ mode = "overview", compact = false }) {
           nova
         </div>
         <div className="mt-8 grid gap-1 max-[800px]:mt-[18px]">
-          <span className="flex items-center gap-2 rounded bg-[#cfcfcd] p-2 text-[10px] font-bold max-[800px]:text-[0px]">
+          <span className="flex items-center gap-2 rounded bg-[#cfcfcd] p-2 text-xs font-bold max-[800px]:text-[0px]">
             <Layers3 /> Overview
           </span>
-          <span className="flex items-center gap-2 p-2 text-[10px] text-[#72716e] max-[800px]:text-[0px]">
+          <span className="flex items-center gap-2 p-2 text-xs text-[#72716e] max-[800px]:text-[0px]">
             <Target /> Projects
           </span>
-          <span className="flex items-center gap-2 p-2 text-[10px] text-[#72716e] max-[800px]:text-[0px]">
+          <span className="flex items-center gap-2 p-2 text-xs text-[#72716e] max-[800px]:text-[0px]">
             <CircleDot /> My tasks
           </span>
-          <span className="flex items-center gap-2 p-2 text-[10px] text-[#72716e] max-[800px]:text-[0px]">
+          <span className="flex items-center gap-2 p-2 text-xs text-[#72716e] max-[800px]:text-[0px]">
             <FileText /> Documents
           </span>
         </div>
-        <div className="mt-auto border-t border-[#c9c9c6] p-4 px-2 text-[10px] max-[800px]:hidden">
+        <div className="mt-auto border-t border-[#c9c9c6] p-4 px-2 text-xs max-[800px]:hidden">
           <span>WORKSPACE</span>
           <b>
             Orbit <ChevronDown size={13} />
@@ -52,7 +52,7 @@ export default function Dashboard({ mode = "overview", compact = false }) {
       <div className="min-w-0 w-full p-[26px_28px] max-[800px]:p-[17px_14px] max-[500px]:p-3">
         <div className="flex items-start justify-between">
           <div>
-            <p className="mb-1 font-mono text-[7px] text-[#85837f]">
+            <p className="mb-1 font-mono text-[11px] text-[#686762]">
               Thursday, October 24
             </p>
             <h3 className="m-0 text-xl tracking-[-0.07em]">{data[0]}</h3>
@@ -78,7 +78,7 @@ export function Overview({ mode }) {
     <>
       <div className="mt-[23px] grid grid-cols-[1.15fr_1fr_1fr] gap-3 max-[800px]:grid-cols-2 max-[500px]:gap-1.5">
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5 max-[500px]:p-2">
-          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">{mode === "projects" ? "PROJECTS" : "PROGRESS"}</small>
+          <small className="block font-dm-mono text-[10px] tracking-[0.07em] text-[#686762]">{mode === "projects" ? "PROJECTS" : "PROGRESS"}</small>
           <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">
             {mode === "projects" ? "12" : "72"}
             <em>{mode === "projects" ? " active" : "%"}</em>
@@ -88,14 +88,14 @@ export function Overview({ mode }) {
           </div>
         </div>
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
-          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">FOCUS TIME</small>
+          <small className="block font-dm-mono text-[10px] tracking-[0.07em] text-[#686762]">FOCUS TIME</small>
           <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">
             4.5<em> hours</em>
           </strong>
-          <p className="text-[8px] text-[#4e9772]">↑ 12% from last week</p>
+          <p className="text-[11px] text-[#36734f]">↑ 12% from last week</p>
         </div>
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5 max-[800px]:hidden">
-          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">TEAM ACTIVITY</small>
+          <small className="block font-dm-mono text-[10px] tracking-[0.07em] text-[#686762]">TEAM ACTIVITY</small>
           <AvatarStack />
           <p>8 people active</p>
         </div>
@@ -103,7 +103,7 @@ export function Overview({ mode }) {
       <div className="mt-4 grid grid-cols-[1.2fr_1fr] gap-3 max-[800px]:grid-cols-1">
         <section className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
           <header className="flex items-center justify-between">
-            <h4 className="m-0 text-[10px]">Today&apos;s priorities</h4>
+            <h4 className="m-0 text-xs">Today&apos;s priorities</h4>
             <button className="h-[21px] rounded border-0 bg-[#dededa] p-1">
               <Plus size={15} />
             </button>
@@ -126,7 +126,7 @@ export function Overview({ mode }) {
                   {item[1]}
                 </small>
               </div>
-              <span className="ml-auto text-[7px] text-[#8e8c88]">
+              <span className="ml-auto text-[10px] text-[#686762]">
                 {index === 1 ? "Tomorrow" : "Today"}
               </span>
             </div>
@@ -134,25 +134,25 @@ export function Overview({ mode }) {
         </section>
         <section className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
           <header className="flex items-center justify-between">
-            <h4 className="m-0 text-[10px]">Project timeline</h4>
-            <span className="font-dm-mono text-[7px] text-[#777570]">Week 43</span>
+            <h4 className="m-0 text-xs">Project timeline</h4>
+            <span className="font-dm-mono text-[10px] text-[#686762]">Week 43</span>
           </header>
-          <div className="my-[17px] flex justify-between text-[6px] text-[#92908a]">
+          <div className="my-[17px] flex justify-between text-[9px] text-[#686762]">
             <span>Mon</span>
             <span>Tue</span>
             <span>Wed</span>
             <span className="font-bold text-[#755ee0]">Thu</span>
             <span>Fri</span>
           </div>
-          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+          <div className="flex h-[24px] items-center border-t border-[#e3e3e0] text-[9px]">
             <b className="w-9">Launch</b>
             <i className="h-2 rounded-[3px] bg-[#b8a7fa]" style={{ width: "64%", marginLeft: "8%" }} />
           </div>
-          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+          <div className="flex h-[24px] items-center border-t border-[#e3e3e0] text-[9px]">
             <b className="w-9">Website</b>
             <i className="h-2 rounded-[3px] bg-[#a5c0e7]" style={{ width: "44%", marginLeft: "25%" }} />
           </div>
-          <div className="flex h-[21px] items-center border-t border-[#e3e3e0] text-[7px]">
+          <div className="flex h-[24px] items-center border-t border-[#e3e3e0] text-[9px]">
             <b className="w-9">Content</b>
             <i className="h-2 rounded-[3px] bg-[#e1b387]" style={{ width: "35%", marginLeft: "14%" }} />
           </div>
@@ -166,7 +166,7 @@ export function TaskBoard() {
     <div className="grid h-full grid-cols-3 gap-3 p-0.5 max-[800px]:gap-1">
       {["Backlog", "In progress", "Done"].map((column, index) => (
         <section className="min-w-0" key={column}>
-          <header className="flex items-center justify-between px-0.5 pb-2.5 text-[8px]">
+          <header className="flex items-center justify-between px-0.5 pb-2.5 text-[11px]">
             <span
               className={`mr-1 h-[5px] w-[5px] rounded-full ${index === 0 ? "bg-[#8370df]" : index === 1 ? "bg-[#6cac84]" : "bg-[#9d9c99]"}`}
             />
@@ -187,10 +187,10 @@ export function TaskBoard() {
                 className="mb-2 flex min-h-[92px] flex-col items-start gap-2 rounded border border-[#d9d9d5] bg-[#f8f8f6] p-2.5"
                 key={task}
               >
-                <span className="rounded-sm bg-[#e9e3ff] p-0.5 text-[6px] text-[#735ee1]">
+                <span className="rounded-sm bg-[#e9e3ff] p-0.5 text-[9px] text-[#6049ca]">
                   {taskIndex ? "Design" : "Product"}
                 </span>
-                <b className="text-[8px] leading-[1.35]">{task}</b>
+                <b className="text-[10px] leading-[1.35]">{task}</b>
                 <div className="mt-auto flex w-full items-center justify-between">
                   <AvatarStack />
                   <small>{taskIndex + 2}</small>
@@ -208,12 +208,12 @@ export function Analytics() {
       <section className="h-[205px] rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3.5">
         <header className="flex items-center justify-between">
           <div>
-            <small>TEAM VELOCITY</small>
+            <small className="text-[10px]">TEAM VELOCITY</small>
             <h4>
               42 <em>tasks completed</em>
             </h4>
           </div>
-          <span className="rounded bg-[#dff0e3] p-[5px] text-[7px] text-[#47855d]">+18.4%</span>
+          <span className="rounded bg-[#dff0e3] p-[5px] text-[10px] text-[#326c47]">+18.4%</span>
         </header>
         <div className="flex h-[105px] items-end justify-between gap-2 border-b border-[#d9d8d5] px-1 py-4">
           {Array.from({ length: 7 }, (_, index) => (
@@ -224,7 +224,7 @@ export function Analytics() {
             />
           ))}
         </div>
-        <div className="flex justify-between px-1 py-1.5 text-[6px] text-[#84827e]">
+        <div className="flex justify-between px-1 py-1.5 text-[9px] text-[#686762]">
           {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
             <span key={day}>{day}</span>
           ))}
@@ -232,16 +232,16 @@ export function Analytics() {
       </section>
       <section className="mt-[11px] grid grid-cols-2 gap-2.5">
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3">
-          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">On track</small>
+          <small className="block font-dm-mono text-[10px] tracking-[0.07em] text-[#686762]">On track</small>
           <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">84%</strong>
           <div className="h-1 overflow-hidden rounded bg-[#dededb]">
             <i className="block h-full w-[72%] rounded bg-[#8268ed]" />
           </div>
         </div>
         <div className="rounded border border-[#d9d9d6] bg-[#f6f6f4] p-3">
-          <small className="block font-dm-mono text-[7px] tracking-[0.07em] text-[#82817d]">Focus time</small>
+          <small className="block font-dm-mono text-[10px] tracking-[0.07em] text-[#686762]">Focus time</small>
           <strong className="my-1.5 block text-[21px] tracking-[-0.06em]">31.5h</strong>
-          <p className="m-0 text-[8px] text-[#777570]">↑ 8% this week</p>
+          <p className="m-0 text-[11px] text-[#686762]">↑ 8% this week</p>
         </div>
       </section>
     </div>

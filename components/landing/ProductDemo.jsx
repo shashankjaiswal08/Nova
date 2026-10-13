@@ -31,7 +31,7 @@ export default function ProductDemo() {
     >
       <div className="mx-auto w-[min(1180px,calc(100%-64px))] max-[800px]:w-full">
         <div className="text-center">
-          <span className="font-mono text-[10px] tracking-[0.11em] text-[#9b9891]">
+          <span className="font-mono text-xs tracking-[0.11em] text-[#9b9891]">
             ✦ 03 / IN MOTION
           </span>
           <h2 className="my-7 text-[clamp(2.8rem,5.2vw,5.3rem)] leading-[0.99] tracking-[-0.085em]">
@@ -39,7 +39,7 @@ export default function ProductDemo() {
             <br />
             works <em>with you.</em>
           </h2>
-          <p className="text-[13px] text-[#908e88]">
+          <p className="text-base text-[#aaa8a2]">
             A little less admin. A lot more forward motion.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function ProductDemo() {
               <button
                 key={item}
                 onClick={() => setTab(item)}
-                className={`border-0 border-b bg-transparent pb-3.5 text-[10px] capitalize ${tab === item ? "border-[#9079f5] text-[#f1f0ed]" : "border-transparent text-[#898782]"}`}
+                className={`border-0 border-b bg-transparent pb-3.5 text-xs capitalize ${tab === item ? "border-[#9079f5] text-[#f1f0ed]" : "border-transparent text-[#aaa8a2]"}`}
                 role="tab"
                 aria-selected={tab === item}
               >

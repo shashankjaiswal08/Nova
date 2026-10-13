@@ -36,7 +36,7 @@ export default function Footer() {
             className="
               mt-4
               max-w-[220px]
-              text-xs
+              text-sm
               leading-[1.6]
               text-[#97958f]
             "
@@ -52,16 +52,13 @@ export default function Footer() {
         ========================== */}
 
         {footerGroups.map((group) => (
-          <div
-            key={group[0]}
-            className="min-w-0"
-          >
+          <div key={group[0]} className="min-w-0">
             <b
               className="
                 mb-4
                 block
                 font-manrope
-                text-[10px]
+                text-xs
                 font-semibold
                 uppercase
                 tracking-[0.12em]
@@ -80,7 +77,7 @@ export default function Footer() {
                     w-fit
                     max-w-full
                     break-words
-                    text-[11px]
+                    text-[13px]
                     leading-5
                     text-[#73716d]
                     transition-colors
@@ -112,7 +109,7 @@ export default function Footer() {
           border-t
           border-[#272727]
           pt-5
-          text-[9px]
+          text-xs
           text-[#73716d]
 
           sm:mt-[60px]
@@ -133,16 +130,17 @@ export default function Footer() {
 
         <div
           className="
-            flex
-            flex-col
-            gap-2
+            flex items-center justify-center
+            gap-4 text-sm
             md:items-end
           "
         >
-          <p className="m-0 leading-5">
+          <p className="m-0 leading-5 hover:text-[#f2f0ec]">
             Email:{" "}
             <a
               href="mailto:er.shashankjaiswal08@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
                 break-all
                 transition-colors
@@ -153,7 +151,6 @@ export default function Footer() {
               er.shashankjaiswal08@gmail.com
             </a>
           </p>
-
           <a
             href="https://github.com/shashankjaiswal08/nova"
             target="_blank"
@@ -172,4 +169,3 @@ export default function Footer() {
     </footer>
   );
 }
-
