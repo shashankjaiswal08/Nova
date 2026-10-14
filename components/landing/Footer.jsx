@@ -102,6 +102,7 @@ export default function Footer() {
           mx-auto
           mt-14
           flex
+          items-center
           w-full
           max-w-[1180px]
           flex-col
@@ -123,7 +124,7 @@ export default function Footer() {
         {/* Copyright */}
 
         <span className="leading-5">
-          © 2025 NOVA. A fictional portfolio project.
+          © 2026 NOVA. A fictional portfolio project.
         </span>
 
         {/* Contact + GitHub */}
